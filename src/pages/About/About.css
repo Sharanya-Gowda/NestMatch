@@ -1,0 +1,93 @@
+/* General Styling for About Page */
+.aboutWrapper {
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  /* Styling for each section */
+  .aboutSection {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    animation: slideUp 1s ease-out;
+  }
+  
+  .aboutTitle {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.3s;
+  }
+  
+  .aboutText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.5s;
+  }
+  
+  .solutionList {
+    list-style: none;
+    padding-left: 20px;
+  }
+  
+  .solutionItem {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.7s;
+  }
+  
+  .solutionItem:nth-child(odd) {
+    animation-delay: 0.9s;
+  }
+  
+  .solutionItem strong {
+    color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .aboutWrapper {
+      padding: 30px 10px;
+    }
+  
+    .aboutTitle {
+      font-size: 2rem;
+    }
+  
+    .aboutText {
+      font-size: 1rem;
+    }
+  
+    .solutionItem {
+      font-size: 1rem;
+    }
+  }
+  

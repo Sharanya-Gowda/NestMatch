@@ -1,0 +1,296 @@
+/* General Page Styling */
+.home-container {
+  background: linear-gradient(45deg, #8BC34A, #66BB6A); /* Livelier fresh green gradient */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif; /* Clean, modern font for body text */
+  animation: backgroundGlow 5s infinite ease-in-out;
+}
+
+/* Welcome Text Styling */
+.welcome-text h1 {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif; /* Decorative font for headings */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #FFFFFF;
+  animation: slideIn 1.5s ease-out, glowText 1.5s infinite alternate; /* Glowing text effect */
+  text-shadow: 0 5px 15px rgba(255, 255, 255, 0.4), 0 0 25px #66BB6A, 0 0 30px #8BC34A;
+}
+
+.welcome-text p {
+  font-size: 1.6rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #FAF3E0;
+  animation: fadeIn 1s ease-out;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.3);
+}
+
+/* Hover effects for heading text */
+.welcome-text h1:hover {
+  color: #388E3C; /* Darker green when hovered */
+  font-family: 'Lobster', sans-serif; /* Changing font style on hover */
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 0 25px #388E3C, 0 0 30px #66BB6A; /* Enhanced text-shadow */
+}
+
+/* Hover effects for paragraph text */
+.welcome-text p:hover {
+  color: #388E3C; /* Darker green for better contrast */
+  font-family: 'Roboto', sans-serif; /* Change font style on hover */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Soft text-shadow on hover */
+}
+
+/* Feature Section */
+.features-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.2); /* Light opacity for brighter cards */
+  border-radius: 15px;
+  padding: 35px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  backdrop-filter: blur(10px);
+  animation: bounceIn 1s ease-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.2);
+}
+
+.feature-icon {
+  font-size: 4.5rem;
+  color: #388E3C; /* Fresh green color for icons */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.feature-icon:hover {
+  transform: scale(1.15);
+  color: #388E3C; /* Darker green on hover */
+}
+
+.feature-card h3 {
+  font-size: 2rem;
+  color: #388E3C;
+  margin-bottom: 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  font-family: 'Playfair Display', serif; /* Decorative font for headings */
+}
+
+.feature-card h3:hover {
+  color: white; /* Lighter green on hover */
+}
+
+.feature-card p {
+  font-size: 1.2rem;
+  color: #388E3C;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.feature-card p:hover {
+  color: white;
+}
+
+/* CTA Button Animations */
+.cta-section {
+  margin-top: 60px;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.cta-button {
+  padding: 20px 45px;
+  font-size: 1.8rem;
+  background-color: #66BB6A; /* Soft light green for button */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: pulseButton 2s infinite ease-in-out;
+  font-family: 'Poppins', sans-serif; /* Clean, modern font for the button */
+}
+
+.cta-button:hover {
+  background-color: #81C784; /* Slightly darker green on hover */
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+      padding: 60px 20px;
+  }
+
+  .welcome-text h1 {
+      font-size: 3rem;
+  }
+
+  .welcome-text p {
+      font-size: 1.1rem;
+  }
+
+  .features-section {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .feature-card {
+      width: 85%;
+      padding: 20px 25px;
+  }
+
+  .cta-button {
+      padding: 18px 35px;
+      font-size: 1.4rem;
+  }
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes backgroundGlow {
+  0% {
+      background: linear-gradient(45deg, #8BC34A, #66BB6A);
+  }
+  50% {
+      background: linear-gradient(45deg, #66BB6A, #8BC34A);
+  }
+  100% {
+      background: linear-gradient(45deg, #8BC34A, #66BB6A);
+  }
+}
+
+@keyframes glowText {
+  0% {
+      text-shadow: 0 0 5px #8BC34A, 0 0 10px #8BC34A, 0 0 15px #8BC34A;
+  }
+  100% {
+      text-shadow: 0 0 20px #66BB6A, 0 0 30px #66BB6A, 0 0 40px #66BB6A;
+  }
+}
+
+@keyframes pulseButton {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+.reviewer-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.reviewer-card {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.reviewer-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #388e3c;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #2c6e2d;
+}
