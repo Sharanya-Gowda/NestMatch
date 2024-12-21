@@ -327,3 +327,232 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   }
 }
+/* How It Works Feature Card Styling */
+.how-it-works-card {
+  background: rgba(56, 142, 60, 0.8); /* Slightly darkened green background */
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+  animation: bounceIn 1s ease-out;
+}
+
+.how-it-works-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.how-it-works-card h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+}
+
+.how-it-works-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.how-it-works-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  color: #e8f5e9;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.how-it-works-step:hover {
+  color: #dcedc8; /* Light green on hover */
+}
+
+.step-icon {
+  font-size: 2rem;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.how-it-works-step:hover .step-icon {
+  transform: scale(1.2);
+}
+
+/* Hero Section Styling */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, #8BC34A, #66BB6A); /* Fresh green gradient */
+  color: white;
+  padding: 80px 20px;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.hero-text p {
+  font-size: 1.6rem;
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #FAF3E0;
+}
+
+.search-bar {
+  display: flex;
+  margin-top: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 60%;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #66BB6A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.hero-image {
+  max-width: 45%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* City Selection Section Styling */
+.city-selection {
+  padding: 60px 20px;
+  background-color: #d6efb9;
+}
+
+.city-selection h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #213905;
+}
+
+.city-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of cards on smaller screens */
+  justify-content: center;
+  gap: 20px;
+}
+
+.city-card {
+  position: relative;
+  background-color: #8BC34A;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 160px; /* Slightly smaller width */
+  height: 200px; /* Reduced height for compactness */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.city-card:hover {
+  transform: scale(1.05);
+  background-color: #A5D6A7; /* Lighter green on hover */
+}
+
+.city-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 8px; /* Matches card's border-radius for smoother appearance */
+}
+
+/* Second Image Styling */
+.city-card .second-img {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: left 0.5s ease-in-out;
+}
+
+.city-card:hover .second-img {
+  left: 0;
+}
+
+/* Text Styling */
+.city-card p {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  font-size: 1rem;
+  color:rgba(1, 16, 1, 0.811);
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); /* Adjusted for readability */
+}
+
+.city-card.active {
+  background-color: #388E3C;
+  transform: scale(1.1); /* Slight emphasis on active card */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow for active state */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .city-card {
+    width: 140px; /* Reduced size for tablets */
+    height: 180px;
+  }
+
+  .city-card p {
+    font-size: 0.9rem; /* Smaller font for smaller cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .city-card {
+    width: 120px; /* Reduced size for mobile */
+    height: 160px;
+  }
+
+  .city-card p {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+.logo {
+  width: 250px; /* Adjust the size as needed */
+  height: 250px; /* Keep the height equal to the width for a perfect circle */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image fills the circle properly */
+  margin: 0 auto; /* Optional: Centers the image if needed */
+}

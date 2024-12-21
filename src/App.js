@@ -1,12 +1,13 @@
 import React from 'react';
-import { Routes, Route  } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import PGOwnerLogin from './pages/PGOwnerLogin';  // Ensure your page component is correctly named
+import PGOwnerLogin from './pages/PGOwnerLogin'; // Ensure your page component is correctly named
 import PGSearcherLogin from './pages/PGSearcherLogin'; // Same for PG Searcher login page
-
 import ReviewerPage from './pages/ReviewerPage/ReviewerPage';
+import Bangalore from './pages/Bangalore/Bangalore'; // Import the Bangalore page component
+
 const App = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/login/PGOwnerLogin" element={<PGOwnerLogin />} />
         <Route path="/login/PGSearcherLogin" element={<PGSearcherLogin />} />
         <Route path="/reviewer" element={<ReviewerPage />} />
+        <Route path="/bangalore" element={<Bangalore />} /> {/* Add Bangalore page route */}
       </Routes>
     </div>
   );
