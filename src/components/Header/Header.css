@@ -1,192 +1,231 @@
 /* General Styling for Header */
 .headerWrapper {
-    background-color: #333;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease; /* Smooth transition for dark/light mode */
-    position: relative;
-  }
-  
-  .headerWrapper.dark-mode {
-    background-color: #121212; /* Dark mode background */
-  }
-  
-  /* Logo Styling */
-  .logoWrapper {
-    flex: 1;
-  }
-  
-  .logoText {
-    color: #4CAF50;
-    font-size: 2rem;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
-  /* Navigation Styling */
+  background-color: #333;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease; /* Smooth transition for dark/light mode */
+  position: relative;
+}
+
+/* Dark Mode Styling */
+.headerWrapper.dark-mode {
+  background-color: #121212; /* Dark mode background */
+}
+
+/* Logo Styling */
+.logoWrapper {
+  flex: 1;
+}
+
+.logoText {
+  color: #4CAF50;
+  font-size: 2rem;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Navigation Styling */
+.navWrapper {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin: 0 20px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'Arial', sans-serif;
+  font-weight: normal;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navLink:hover {
+  color: #4CAF50;
+  transform: scale(1.05);
+}
+
+/* Dark Mode Adjustments */
+.headerWrapper.dark-mode .navLink {
+  color: #f1f1f1; /* Light color for dark mode */
+}
+
+.headerWrapper.dark-mode .navLink:hover {
+  color: #4CAF50;
+}
+
+/* Dropdown Styling */
+.loginDropdown {
+  position: relative;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  color: white;
+  top: 40px; /* Position the dropdown below the button */
+  left: 0;
+  width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1000; /* Ensure dropdown is above other elements */
+  pointer-events: auto; /* Make the dropdown items clickable */
+  transition: opacity 0.3s ease;
+}
+
+.dropdownItem {
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  color: white;
+  text-align: left;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #4CAF50;
+}
+
+.loginDropdown button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.loginDropdown button:hover {
+  color: #4CAF50;
+}
+
+/* Show the dropdown when Login button is clicked */
+.loginDropdown .dropdownMenu {
+  display: block;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
   .navWrapper {
-    flex: 2;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .navList {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navItem {
-    margin: 0 20px;
-  }
-  
-  .navLink {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-family: 'Arial', sans-serif;
-    font-weight: normal;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .navLink:hover {
-    color: #4CAF50;
-    transform: scale(1.05);
-  }
-  
-  /* Dark Mode Adjustments */
-  .headerWrapper.dark-mode .navLink {
-    color: #f1f1f1; /* Light color for dark mode */
-  }
-  
-  .headerWrapper.dark-mode .navLink:hover {
-    color: #4CAF50;
-  }
-  
-  /* Dropdown Styling */
-  .loginDropdown {
-    position: relative;
-  }
-  
-  .dropdownMenu {
     display: none;
+    width: 100%;
+  }
+
+  .navWrapper.active {
+    display: block;
+  }
+
+  .navList {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .navItem {
+    margin: 10px 0;
+  }
+
+  .headerWrapper {
+    flex-direction: column;
+  }
+
+  .navLink {
+    font-size: 1.3rem;
+  }
+
+  /* Hamburger Icon */
+  .hamburger {
+    display: block;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
     position: absolute;
-    background-color: #1a1a1a;
-    color: white;
-    top: 40px; /* Position the dropdown below the button */
-    left: 0;
-    width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    z-index: 1000; /* Ensure dropdown is above other elements */
-    pointer-events: auto; /* Make the dropdown items clickable */
-    transition: opacity 0.3s ease;
+    top: 20px;
+    right: 30px; /* Place it at the top-right corner */
   }
-  
-  .dropdownItem {
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    color: white;
-    text-align: left;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dropdownItem:hover {
-    background-color: #4CAF50;
-  }
-  
-  .loginDropdown button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    color: white;
-    font-weight: normal;
-    transition: color 0.3s ease;
-  }
-  
-  .loginDropdown button:hover {
+
+  /* Change color of hamburger when active */
+  .hamburger.active {
     color: #4CAF50;
   }
-  
-  /* Show the dropdown when Login button is clicked */
-  .loginDropdown .dropdownMenu {
-    display: block;
-  }
-  
-  /* Mobile Responsive Design */
-  @media (max-width: 768px) {
-    .navWrapper {
-      display: none;
-      width: 100%;
-    }
-  
-    .navWrapper.active {
-      display: block;
-    }
-  
-    .navList {
-      display: block;
-      text-align: center;
-      padding: 20px 0;
-    }
-  
-    .navItem {
-      margin: 10px 0;
-    }
-  
-    .headerWrapper {
-      flex-direction: column;
-    }
-  
-    .navLink {
-      font-size: 1.3rem;
-    }
-  
-    /* Hamburger Icon */
-    .hamburger {
-      display: block;
-      background-color: transparent;
-      border: none;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      right: 30px; /* Place it at the top-right corner */
-    }
-  
-    /* Change color of hamburger when active */
-    .hamburger.active {
-      color: #4CAF50;
-    }
-  }
-  
-  /* Light/Dark Mode Toggle Button */
-  .modeToggleButton {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: normal;
-    transition: color 0.3s ease;
-  }
-  
-  .modeToggleButton.dark-mode {
-    color: #f1f1f1;
-  }
-  
-  .modeToggleButton:hover {
-    color: #4CAF50;
-  }
-  
+}
+
+/* Light/Dark Mode Toggle Button */
+.modeToggleButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.modeToggleButton.dark-mode {
+  color: #f1f1f1;
+}
+
+.modeToggleButton:hover {
+  color: #4CAF50;
+}
+
+/* Lighter Light Mode Styling */
+body {
+  background-color: #f4f4f4; /* Lighter background */
+  color: #333333; /* Darker text for contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Adjustments for light mode */
+body.dark-mode {
+  background-color: #181818;
+  color: #f1f1f1;
+}
+
+/* Header and Navbar Lighter Mode */
+.headerWrapper {
+  background-color: #ffffff; /* Lighter header background */
+}
+
+.headerWrapper .navLink {
+  color: #333333; /* Darker text for links in light mode */
+}
+
+.headerWrapper .navLink:hover {
+  color: #4CAF50; /* Maintain hover effect */
+}
+
+/* Dark Mode for Dropdown */
+.loginDropdown .dropdownMenu {
+  background-color: #1a1a1a; /* Dark background for dropdown in dark mode */
+}
+
+.loginDropdown button {
+  color: #333333; /* Dark color for buttons in light mode */
+}
+
+.loginDropdown button:hover {
+  color: #4CAF50; /* Maintain hover effect */
+}

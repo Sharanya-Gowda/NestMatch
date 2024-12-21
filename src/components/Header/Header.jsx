@@ -17,8 +17,10 @@ const Header = () => {
     setIsDarkMode(!isDarkMode);
     if (!isDarkMode) {
       document.body.classList.add('dark-mode');
+      localStorage.setItem('mode', 'dark'); // Save mode preference to localStorage
     } else {
       document.body.classList.remove('dark-mode');
+      localStorage.removeItem('mode'); // Remove mode preference from localStorage
     }
   };
 
@@ -38,6 +40,14 @@ const Header = () => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
+  }, []);
+
+  // Load dark mode preference from localStorage on component mount
+  useEffect(() => {
+    if (localStorage.getItem('mode') === 'dark') {
+      setIsDarkMode(true);
+      document.body.classList.add('dark-mode');
+    }
   }, []);
 
   return (

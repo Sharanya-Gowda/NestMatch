@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // React Router's navigation hook
 import './Home.css';
 
@@ -24,12 +24,31 @@ import logo from '../../assets/images/logo.jpg';
 
 const Home = () => {
   const navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('mode') === 'dark') {
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  // Toggle dark/light mode
+  const toggleMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (isDarkMode) {
+      localStorage.setItem('mode', 'dark');
+    } else {
+      localStorage.removeItem('mode');
+    }
+  };
+
 
   const handleNavigate = (path) => {
     navigate(path); // Navigate to the given path
   };
 
   return (
+    
     <div className="home-container">
       {/* Welcome Section */}
       <header className="welcome-text">
